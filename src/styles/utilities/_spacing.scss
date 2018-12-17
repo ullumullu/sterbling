@@ -1,0 +1,28 @@
+$spacing-utils:
+    margin-top,
+    margin-bottom,
+    margin-left,
+    margin-right,
+    padding-top,
+    padding-bottom,
+    padding-left,
+    padding-right !default;
+
+@mixin blogbout-spacing {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        @each $size, $spacing in $spacing-sizes {
+            @each $util in $spacing-utils {
+                $util-string: quote($util);
+
+                @include screen($breakpoint) {
+                    $next-letter: str-index($util-string, "-") + 1;
+                    $util-short: str-slice($util-string, 1, 1) + str-slice($util-string, $next-letter, $next-letter);
+
+                    ._#{$breakpoint}-#{unquote($util-short)}--#{to-upper-case($size)} {
+                        #{$util}: spacing($size);
+                    }
+                }
+            }
+        }
+    }
+}

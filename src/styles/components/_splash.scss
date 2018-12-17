@@ -1,0 +1,73 @@
+$color-splash-container: #eff2f5;
+
+@mixin splash-container {
+  background: $color-splash-container;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 80%;
+  top: 0;
+  left: 0;
+  position: fixed !important;
+
+
+  &--content {
+    position: absolute;
+    top: 79%;
+    width: 100%;
+    min-height: 12%;
+    z-index: 2;
+    border-top: 1rem #C2595A solid;
+    background: white;
+    margin-bottom: 60px;
+  }
+
+}
+
+
+
+@mixin splash {
+  width: 80%;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-width: 1300px;
+
+  &--head {
+    font-size: 3rem;
+    color: $color__black;
+    padding: 0.3rem 0em;
+    font-weight: 600;
+    border-radius: 5px;
+    line-height: 1em;
+  }
+
+  &--subhead {
+    color: $color__black;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+  }
+
+  &--content-wrapper {
+    width: 80%;
+    z-index: 2;
+    background: white;
+    max-width: 1300px;
+    margin: auto;
+  }
+
+}
+
+@mixin blogbout-splash {
+  .splash__container {
+    @include splash-container();
+  }
+
+  .splash {
+    @include splash();
+  }
+}

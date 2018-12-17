@@ -1,0 +1,63 @@
+$hr-border-width: 1px !default;
+
+@mixin blogbout-elements {
+    h1,
+    .text--1 {
+        @include type-bold;
+        @include heading(5, xs);
+        letter-spacing: -.0625rem;
+    }
+  
+    h2,
+    .text--2 {
+        @include type-bold;
+        @include heading(3, base);
+        letter-spacing: -.04375rem;
+    }
+  
+    h3,
+    .text--3 {
+        @include type-bold;
+        @include heading(2, base);
+        letter-spacing: -.03125rem;
+    }
+  
+    h4,
+    .text--4 {
+        @include type-normal;
+        @include heading(1, base);
+        letter-spacing: -.0125rem;
+    }
+  
+    h5,
+    .text--5 {
+        @include type-bold;
+        @include heading(0, base);
+        letter-spacing: -.0125rem;
+    }
+
+  .text--small {
+      @include type-small;
+  }
+
+  hr,
+  .hr {
+      border: 0;
+      border-bottom: $hr-border-width solid $border-gray;
+  }
+
+  code {
+      @include type-small;
+      color: $fill-red;
+      background: $fill-gray--highlight;
+      border-radius: em(3px);
+      padding: em(3px) em(5px);
+  }
+
+  .img {
+      &--FULL {
+          width: 100%;
+      }
+  }
+
+}

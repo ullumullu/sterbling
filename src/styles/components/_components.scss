@@ -1,0 +1,8 @@
+@import "splash";
+@import "navigation";
+
+
+@mixin blogbout-components {
+  @include blogbout-splash;
+  @include blogbout-navigation();
+}

@@ -1,0 +1,85 @@
+/// Colors
+$fill-primary: color("blue", 50);
+$fill-red: color("red", 50);
+$fill-gray: color('gray', 30);
+$fill-gray--highlight: color("neutral-white", 30);
+$fill-gray--lighter: color('neutral-white', 20);
+$fill-white: color("white");
+
+$text-default: color("gray", 80);
+$text-gray: color("gray", 60);
+
+$border-gray: color('gray', 10);
+
+
+/// Baseline Grid
+$line-height: 1.75;
+$baseline-grid: .5rem;
+
+
+/// Grid
+$grid-gutter-width: $baseline-grid * 3;
+$grid-columns: 12;
+$grid-padding: $grid-gutter-width;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 35em,
+    md: 46em,
+    lg: 64em
+);
+
+$container-max-widths: (
+    sm: 37em,
+    md: 46em,
+    lg: 61em
+);
+
+/// Map of sizing names to spacings
+$spacing-sizes: (
+    trim: 0,
+    base: br(1),
+    xs: br(2),
+    sm: br(3),
+    md: br(4),
+    lg: br(6),
+    xl: br(10),
+    xxl: br(16)
+);
+
+/// Typography
+$ms-base: 1em;
+$ms-ratio: $minor-third;
+$ms-range:
+    $minor-third 0,
+    $major-third screen(lg);
+
+$font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-light: "raleway", "Helvetica Neue Medium", $font-family;
+$font-family-bold: "raleway", "Helvetica Neue Bold", $font-family;
+$font-weight-light: 100;
+$font-weight: 400;
+$font-weight-bold: 700;
+
+$font-size-root: (
+    xs: 15px,
+    md: 16px
+);
+
+$font-size-small: (
+    xs: em(13px),
+    md: em(14px)
+);
+
+/// Z-index steps
+$zindex-modal: 1050;
+$zindex-tooltip: 1070;
+
+/// Transitions
+$transition-duration: .2s;
+$transition-timing-function: ease-out;
+
+
+// Reset
+$abbr-border-color: color("neutral-white", 40);
+$dt-font-weight: bold;

@@ -1,0 +1,35 @@
+$rem-base: 16;
+
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+@function em($value, $base: $rem-base) {
+    $number: strip-unit($value);
+    $unit: unit($value);
+
+    @if $unit == "px" {
+        @return ($number / $base) * 1em;
+    } @else if $unit == "rem" {
+        @return $number * 1em;
+    } @else {
+        @return $value;
+    }
+}
+
+@function rem($value, $base: $rem-base) {
+    $number: strip-unit($value);
+    $unit: unit($value);
+
+    @if $unit == "px" {
+        @return ($number / $base) * 1rem;
+    } @else if $unit == "em" {
+        @return $number * 1rem;
+    } @else {
+        @return $value;
+    }
+}

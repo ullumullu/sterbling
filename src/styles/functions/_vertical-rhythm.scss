@@ -1,0 +1,23 @@
+// Search config for values
+@function ms-range($x,$y,$range:$ms-range) {
+  @return nth(nth($range,$x),$y);
+}
+
+@function br($rows) {
+  @return $baseline-grid * $rows;
+}
+
+@function spacing($size) {
+  @return map-get($spacing-sizes, $size);
+}
+
+@mixin spacing($size) {
+  margin-bottom: spacing($size);
+}
+
+@function unitless-font-scaler($font-size) { 
+  // Find how many baseline-rows the font is, bump it up one and 1/4,
+  // then round to the nearest half baseline row.
+  // Next, convert it to a unitless scaler
+  @return (br(round((($font-size / $baseline-grid) + 1.25) * 2) / 2)) / $font-size;
+}

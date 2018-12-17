@@ -1,0 +1,68 @@
+/// List of spacings between text items
+/// @type list
+$text-spacings: trim, base, xs, sm, md, lg, xl !default;
+
+/// List of text-align utils
+/// @type list
+$text-aligns: left, right, center !default;
+
+/// List of utility color classes
+/// @type map
+$text-colors: (
+    meta: $text-gray
+) !default;
+
+/// Include text spacing mods
+@mixin text-space {
+    @each $space in $text-spacings {
+        &--SPACE-#{to-upper-case($space)} {
+            @include spacing($space);
+        }
+    }
+}
+
+/// Include text align mods
+@mixin text-align {
+    @each $align in $text-aligns {
+        &--ALIGN-#{to-upper-case($align)} {
+            text-align: $align;
+        }
+    }
+}
+
+// include text emphasis mods
+@mixin text-emphasis {
+    &--REGULAR {
+        @include type-normal;
+    }
+
+    &--BOLD {
+        @include type-bold;
+    }
+}
+
+/// Include text color mods
+@mixin text-colors {
+    @each $name, $color in $text-colors {
+        &--#{to-upper-case($name)} {
+            color: $color;
+        }
+    }
+}
+
+// include text small mods
+@mixin text-small {
+    &--SMALL {
+        @include type-small;
+    }
+}
+
+@mixin blogbout-text {
+    .text {
+        @include text-space;
+        @include text-align;
+        @include text-emphasis;
+        @include text-colors;
+        @include text-small;
+    }
+}

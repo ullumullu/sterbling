@@ -1,0 +1,57 @@
+@import url("https://use.typekit.net/vhu2fwk.css");
+
+@mixin ms-set-type ($value, $base: $ms-base, $ratio: $ms-ratio) {
+  $computed-font-size: ms($value, $base, $ratio);
+  font-size: $computed-font-size;
+  line-height: unitless-font-scaler($computed-font-size);
+}
+
+@mixin ms-set-type-respond($value, $range: $ms-range, $base: $ms-base) {
+  @if $ms-range == null {
+    @include ms-set-type($value, $base);
+  } @else {
+    @include ms-set-type($value, $base, ms-range(1, 1, $range));
+
+      // Loop through breakpoints
+      @for $i from 1 through (length($range) - 1) {
+          @media (min-width: ms-range($i,2,$range)) and (max-width: ms-range($i+1, 2, $range)) {
+              @include ms-set-type($value, $base, ms-range($i, 1, $range));
+          }
+      }
+
+      // Final breakpoint is just an override value
+      @media (min-width: ms-range(length($range),2,$range)) {
+          @include ms-set-type($value, $base, ms-range(length($range), 1, $range));
+      }
+  }
+}
+
+@mixin heading($ms, $size) {
+  @include ms-set-type-respond($ms);
+  @include spacing($size);
+  margin-top: 0;
+}
+
+@mixin type-normal {
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
+
+@mixin type-light {
+  font-family: $font-family-light;
+  font-weight: $font-weight-light;
+}
+
+@mixin type-bold {
+  font-family: $font-family-bold;
+  font-weight: $font-weight-bold;
+}
+
+@mixin type-small {
+  @each $breakpoint, $size in $font-size-small {
+      @include screen($breakpoint) {
+          font-size: $size;
+          line-height: unitless-font-scaler($size);
+      }
+  }
+}

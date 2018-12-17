@@ -1,0 +1,24 @@
+
+
+@mixin navigation-containers {
+  
+  &--FIXED-TOP{
+    border-bottom: none;
+    z-index: 4;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+}
+
+@mixin blogbout-navigation {
+
+  .navigation__container {
+    @include navigation-containers();
+  }
+  
+  .navigation {
+    
+  }
+}
