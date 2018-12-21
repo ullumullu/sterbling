@@ -54,9 +54,10 @@ $ms-range:
     $minor-third 0,
     $major-third screen(lg);
 
-$font-family: "raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-light: "raleway", "Helvetica Neue Medium", $font-family;
-$font-family-bold: "raleway", "Helvetica Neue Bold", $font-family;
+$font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+$font-family-light: 'IBM Plex Sans', $font-family;
+$font-family-bold: 'IBM Plex Sans', $font-family;
+$font-family-mono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace; 
 $font-weight-light: 100;
 $font-weight: 400;
 $font-weight-bold: 700;

@@ -48,8 +48,16 @@ $color-splash-container: #eff2f5;
 
   &--subhead {
     color: $color__black;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
     opacity: 0.8;
+    @include type-normal();
+  }
+
+  &--bottom {
+    color: $color__black;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+    margin: rem(16px) 0;
   }
 
   &--content-wrapper {
@@ -58,6 +66,7 @@ $color-splash-container: #eff2f5;
     background: white;
     max-width: 1300px;
     margin: auto;
+    padding: 3rem 0.5rem;
   }
 
 }

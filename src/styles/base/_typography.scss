@@ -1,4 +1,4 @@
-@import url("https://use.typekit.net/vhu2fwk.css");
+@import '@ibm/plex/scss/ibm-plex.scss';
 
 @mixin ms-set-type ($value, $base: $ms-base, $ratio: $ms-ratio) {
   $computed-font-size: ms($value, $base, $ratio);

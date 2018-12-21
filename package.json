@@ -4,6 +4,7 @@
   "description": "Bloug about Coding, Design and other random topics",
   "main": "build.js",
   "dependencies": {
+    "@ibm/plex": "^1.2.3",
     "jstransformer-nunjucks": "^0.5.0",
     "metalsmith-html-minifier": "^3.0.0",
     "metalsmith-mapsite": "^1.0.6",
