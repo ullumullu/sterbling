@@ -31,8 +31,8 @@
     "metalsmith-templates": "^0.7.0",
     "metalsmith-watch": "^1.0.3",
     "modularscale-sass": "^3.0.4",
-    "moment": "^2.20.1",
-    "nunjucks": "^3.0.1",
+    "moment": "^2.23.0",
+    "nunjucks": "^3.1.6",
     "nunjucks-date-filter": "^0.1.1"
   },
   "scripts": {
