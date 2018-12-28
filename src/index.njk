@@ -36,8 +36,9 @@ author: Sven Sterbling
       </div>
   </div>
 
-</div>
+  <img class="author" src="/images/sterbling3.png" alt="Portrait of Sven Sterbling">
 
+</div>
 
 <div class="splash__container--content">
   <div class="splash--content-wrapper"> 
@@ -50,12 +51,22 @@ author: Sven Sterbling
     <section>
       <h1>Reading List</h1>
       <ul>
-        <li>TODO</li>
+        {% for title, author in {
+            "Designing Data-Intensive Applications": "Martin Kleppmann",
+            "Antifragile: Things that Gain from Disorder": "Nassim Nicholas Taleb",
+            "Mythical Man-Month, The: Essays on Software Engineering": "Frederick P. Brooks Jr.",
+            "To Save Everything, Click Here": "Evgeny Morozov"
+          }
+        %}
+          <li class="mb_sm--BASE"><span class="text--INLINE-BLOCK mr_sm--BASE">{{title}}</span><span class="text--LIGHT text--INLINE-BLOCK">by {{author}}</span></li>
+        {% else %}
+          <li>The reading list is empty :(</li>
+        {% endfor %}
       </ul>
     </section>
     <section>
       <h1>Think</h1>
-      <quote>"A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away." <br/> ─ Antoine de Saint-Exupéry</quote>
+      <quote>"It seems that perfection is finally attained not when there is no longer anything to add, but when there is no longer anything to take away." <br/> ─ Antoine de Saint-Exupéry</quote>
     </section>
   </div>
 </div>

@@ -1,16 +1,28 @@
 /// List of spacings between text items
 /// @type list
-$text-spacings: trim, base, xs, sm, md, lg, xl !default;
+$text-spacings: trim,
+base,
+xs,
+sm,
+md,
+lg,
+xl !default;
 
 /// List of text-align utils
 /// @type list
-$text-aligns: left, right, center !default;
+$text-aligns: left,
+right,
+center !default;
+
+/// List of display utils used for text
+/// @type list
+$text-displays: inline-block,
+inline !default;
+
 
 /// List of utility color classes
 /// @type map
-$text-colors: (
-    meta: $text-gray
-) !default;
+$text-colors: (meta: $text-gray) !default;
 
 /// Include text spacing mods
 @mixin text-space {
@@ -39,11 +51,17 @@ $text-colors: (
     &--BOLD {
         @include type-bold;
     }
+
+    &--LIGHT {
+        @include type-light;
+    }
 }
 
 /// Include text color mods
 @mixin text-colors {
-    @each $name, $color in $text-colors {
+
+    @each $name,
+    $color in $text-colors {
         &--#{to-upper-case($name)} {
             color: $color;
         }
@@ -57,6 +75,14 @@ $text-colors: (
     }
 }
 
+@mixin text-display {
+    @each $display in $text-displays {
+        &--#{to-upper-case($display)} {
+            display: $display;
+        }
+    }
+}
+
 @mixin blogbout-text {
     .text {
         @include text-space;
@@ -64,5 +90,6 @@ $text-colors: (
         @include text-emphasis;
         @include text-colors;
         @include text-small;
+        @include text-display;
     }
 }

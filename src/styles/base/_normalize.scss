@@ -17,10 +17,11 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @each $breakpoint, $size in $font-size-root {
-      @include screen($breakpoint) {
-          font-size: $size;
-      }
+  @each $breakpoint,
+  $size in $font-size-root {
+    @include screen($breakpoint) {
+      font-size: $size;
+    }
   }
 }
 
@@ -30,6 +31,7 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  letter-spacing: 0.02rem;
   // position: relative;
 }
 
@@ -50,8 +52,8 @@ html {
 // Wrap `@viewport` with `@at-root` for when folks do a nested import (e.g.,
 // `.class-name { @import "bootstrap"; }`).
 @at-root {
-  @-ms-viewport { 
-    width: device-width; 
+  @-ms-viewport {
+    width: device-width;
   }
 }
 
