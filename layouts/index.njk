@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.country" content="DE">
+  <meta name="dcterms.date" content="{{stats.birthtime | date('YYYY-MM-DD')}}">
+  <meta name="dcterms.rights" content="© Sven Sterbling">
+  <title>{{title}}</title>
+
+  <meta name="description" content="{{description}}">
+  <meta name="keywords" content="{{keywords}}">
+  <meta name="author" content="{{author}}">
+
+  <link rel="stylesheet" href="/styles/styles.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+  
+</head>
+<body>
+  {% include "partials/navigation.njk" %}
+  
+  {{ contents | safe }}
+  
+  {% include "partials/footer.njk" %}
+
+  {% if site.devBuild %}
+  <div style="display:none;">
+    {{site | dump}}
+  </div>
+  
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  {% endif %}
+</body>
+</html>
