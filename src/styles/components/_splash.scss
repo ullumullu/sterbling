@@ -19,7 +19,9 @@ $color-splash-container: #eff2f5;
     z-index: 2;
     border-top: 1rem $border-red solid;
     background: $fill-white;
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
+    background-clip: padding-box;
+    border-bottom: 60px solid transparent;
   }
 
 }

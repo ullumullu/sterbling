@@ -24,11 +24,11 @@ console.log((devBuild ? 'Development' : 'Production'), 'build, version', pkg.ver
 const siteMeta = {
   site: {
     devBuild: devBuild,
-    version:  pkg.version,
+    version: pkg.version,
     title: 'blogbout.com',
     url: 'https://blogbout.com',
     domain: devBuild ? 'http://127.0.0.1' : 'https://blogbout.com'
-  }  
+  }
 }
 
 const templateConfig = {
@@ -40,7 +40,10 @@ const templateConfig = {
   cache: false,
   exposeConsolidate: requires => {
     const nunEnv = nunjucks
-    .configure('./src/layouts', {watch: 'true', noCache: 'true'});
+      .configure('./src/layouts', {
+        watch: 'true',
+        noCache: 'true'
+      });
     nunEnv.addFilter('date', dateFilter);
     requires.nunjucks = nunEnv;
   }
@@ -75,20 +78,20 @@ let siteBuild = metalsmith(__dirname)
           noCache: 'true',
           watch: 'true'
         }
-    }))
+      }))
   )
   .use(layouts(templateConfig))
   .use(branch(['pages/**.html'])
-      .use(permalinks({
-        pattern: 'pages/:title',
-        relative: false
-      }))
+    .use(permalinks({
+      pattern: 'pages/:title',
+      relative: false
+    }))
   )
   .use(branch('posts/**.html')
-      .use(permalinks({
-        pattern: 'posts/:title',
-        relative: false
-      }))
+    .use(permalinks({
+      pattern: 'posts/:title',
+      relative: false
+    }))
   );
 
 if (htmlmin) siteBuild.use(htmlmin())
@@ -117,8 +120,10 @@ siteBuild
   .build(function (err) {
     if (err) {
       console.log(err);
-    }
-    else {
+    } else {
       console.log('Site build complete!');
+      if (!watch) {
+        process.exit(0)
+      }
     }
   });
