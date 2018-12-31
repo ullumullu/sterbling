@@ -42,7 +42,7 @@ $color-splash-container: #eff2f5;
     top: 100px;
   }
 
-  &--head {
+  &__head {
     font-size: 3rem;
     color: $color__black;
     padding: 0.1rem 0em;
@@ -51,7 +51,7 @@ $color-splash-container: #eff2f5;
     line-height: 1em;
   }
 
-  &--subhead {
+  &__subhead {
     color: $color__black;
     letter-spacing: 0.02rem;
     opacity: 0.8;
@@ -65,14 +65,14 @@ $color-splash-container: #eff2f5;
     }
   }
 
-  &--bottom {
+  &__bottom {
     color: $color__black;
     letter-spacing: 0.02rem;
     opacity: 0.8;
     margin: rem(16px) 0;
   }
 
-  &--content-wrapper {
+  &__content-wrapper {
     width: 80%;
     z-index: 2;
     background: $fill-white;
