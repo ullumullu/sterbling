@@ -5072,7 +5072,7 @@ code {
   }
 }
 
-.splash--head {
+.splash__head {
   font-size: 3rem;
   color: #000;
   padding: 0.1rem 0em;
@@ -5081,7 +5081,7 @@ code {
   line-height: 1em;
 }
 
-.splash--subhead {
+.splash__subhead {
   color: #000;
   letter-spacing: 0.02rem;
   opacity: 0.8;
@@ -5090,7 +5090,7 @@ code {
 }
 
 @supports (width: fit-content) {
-  .splash--subhead {
+  .splash__subhead {
     width: fit-content;
     background-color: #eff2f5;
     padding-right: 0.5rem;
@@ -5098,14 +5098,14 @@ code {
   }
 }
 
-.splash--bottom {
+.splash__bottom {
   color: #000;
   letter-spacing: 0.02rem;
   opacity: 0.8;
   margin: 1rem 0;
 }
 
-.splash--content-wrapper {
+.splash__content-wrapper {
   width: 80%;
   z-index: 2;
   background: #fff;
