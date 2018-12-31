@@ -5054,6 +5054,24 @@ code {
   border-bottom: 60px solid transparent;
 }
 
+.splash__container--arrow-down::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: calc(50% - 30px);
+  height: 0;
+  width: 0;
+  border: 1.875rem solid transparent;
+  border-top: 2.8125rem solid #C2595A;
+  border-bottom: none;
+  transform-origin: top;
+  transition: transform .5s ease;
+}
+
+.splash__container--arrow-down-animate::after {
+  transform: scaleY(0) scaleX(2);
+}
+
 .splash {
   width: 80%;
   height: 85vh;
