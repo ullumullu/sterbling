@@ -24,6 +24,24 @@ $color-splash-container: #eff2f5;
     border-bottom: 60px solid transparent;
   }
 
+  &--arrow-down::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: calc(50% - 30px);
+    height: 0;
+    width: 0;
+    border: rem(30px) solid transparent;
+    border-top: rem(45px) solid $border-red;
+    border-bottom: none;
+    transform-origin: top;
+    transition: transform .5s ease;
+  }
+
+  &--arrow-down-animate::after {
+    transform: scaleY(0) scaleX(2);
+  }
+
 }
 
 @mixin splash {
