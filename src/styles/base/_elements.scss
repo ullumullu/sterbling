@@ -40,6 +40,12 @@ $hr-border-width: 1px !default;
       @include type-small;
   }
 
+
+  p,
+  .p {
+    letter-spacing: 0.02rem;
+  }
+
   hr,
   .hr {
       border: 0;
