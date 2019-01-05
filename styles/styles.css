@@ -5041,9 +5041,9 @@ code {
   position: fixed !important;
 }
 
-@media (min-width: 46em) {
+@media (min-width: 64em) {
   .splash__container {
-    height: 90vh;
+    height: 94vh;
   }
 }
 
@@ -5059,9 +5059,9 @@ code {
   border-bottom: 60px solid transparent;
 }
 
-@media (min-width: 46em) {
+@media (min-width: 64em) {
   .splash__container--content {
-    top: 90vh;
+    top: 94vh;
   }
 }
 
