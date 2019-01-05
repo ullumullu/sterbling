@@ -7,11 +7,19 @@ $color-splash-container: #eff2f5;
   height: 90%;
   top: 0;
   left: 0;
-  position: fixed !important;
+  position: fixed;
+  overflow: hidden;
 
-  @include screen("md") {
+  @include screen("lg") {
     height: 94vh;
   }
+
+  @media screen and (orientation:landscape)
+  and (max-device-height: 800px) {
+    position: absolute;
+    height: 100%;
+    z-index: 2;
+ }
 
   &--content {
     position: absolute;
@@ -21,12 +29,15 @@ $color-splash-container: #eff2f5;
     z-index: 2;
     border-top: 1rem $border-red solid;
     background: $fill-white;
-    // margin-bottom: 60px;
     background-clip: padding-box;
     border-bottom: 60px solid transparent;
 
-    @include screen("md") {
+    @include screen("lg") {
       top: 94vh;
+    }
+    @media screen and (orientation:landscape) 
+    and (max-device-height: 800px) {
+       top: 100%;
     }
   }
 
@@ -52,7 +63,7 @@ $color-splash-container: #eff2f5;
 
 @mixin splash {
   width: 80%;
-  height: 85vh;
+  height: 95%;
   margin: auto;
   position: absolute;
   left: 0;
@@ -60,11 +71,15 @@ $color-splash-container: #eff2f5;
   right: 0;
   max-width: 1300px;
 
-
   @include screen("md") {
     height: 50%;
     top: 100px;
   }
+
+  @media screen and (orientation:landscape)
+  and (max-device-height: 800px) {
+    height: 100%;
+ }
 
   &__head {
     font-size: 3rem;
