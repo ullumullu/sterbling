@@ -5036,15 +5036,21 @@ code {
   z-index: 1;
   overflow: hidden;
   width: 100%;
-  height: 90%;
+  height: 90vh;
   top: 0;
   left: 0;
   position: fixed !important;
 }
 
+@media (min-width: 46em) {
+  .splash__container {
+    height: 94vh;
+  }
+}
+
 .splash__container--content {
   position: absolute;
-  top: 90%;
+  top: 90vh;
   width: 100%;
   min-height: 12%;
   z-index: 2;
@@ -5052,6 +5058,12 @@ code {
   background: #fff;
   background-clip: padding-box;
   border-bottom: 60px solid transparent;
+}
+
+@media (min-width: 46em) {
+  .splash__container--content {
+    top: 94vh;
+  }
 }
 
 .splash__container--arrow-down::after {
