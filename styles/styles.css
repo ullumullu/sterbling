@@ -5034,7 +5034,6 @@ code {
 .splash__container {
   background: #eff2f5;
   z-index: 1;
-  overflow: hidden;
   width: 100%;
   height: 90%;
   top: 0;
@@ -5044,7 +5043,7 @@ code {
 
 @media (min-width: 46em) {
   .splash__container {
-    height: 94%;
+    height: 94vh;
   }
 }
 
@@ -5062,7 +5061,7 @@ code {
 
 @media (min-width: 46em) {
   .splash__container--content {
-    top: 94%;
+    top: 94vh;
   }
 }
 
@@ -5150,6 +5149,8 @@ code {
   right: 3vw;
   bottom: 0;
   z-index: -1;
+  overflow: visible;
+  line-height: 0;
 }
 
 @media (min-width: 46em) {
