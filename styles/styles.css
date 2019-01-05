@@ -3518,6 +3518,11 @@ h5,
   }
 }
 
+p,
+.p {
+  letter-spacing: 0.02rem;
+}
+
 hr,
 .hr {
   border: 0;
@@ -5058,6 +5063,7 @@ code {
   background: #fff;
   background-clip: padding-box;
   border-bottom: 60px solid transparent;
+  padding: 2rem 0;
 }
 
 @media (min-width: 46em) {
@@ -5109,6 +5115,12 @@ code {
   font-weight: 600;
   border-radius: 5px;
   line-height: 1em;
+}
+
+@media (min-width: 46em) {
+  .splash__head {
+    font-size: 4rem;
+  }
 }
 
 .splash__subhead {
