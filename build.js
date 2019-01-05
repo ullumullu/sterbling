@@ -56,7 +56,7 @@ let siteBuild = metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .use(sass({
-    outputStyle: "expanded",
+    outputStyle: devBuild ? 'devBuild' : 'compressed',
     includePaths: ['node_modules', 'src', '.']
   }))
   .use(publish())
