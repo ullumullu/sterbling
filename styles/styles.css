@@ -5104,7 +5104,7 @@ code {
 @media (min-width: 46em) {
   .splash {
     height: 50%;
-    top: 100px;
+    top: 0;
   }
 }
 
