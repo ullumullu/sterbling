@@ -5038,12 +5038,21 @@ code {
   height: 90%;
   top: 0;
   left: 0;
-  position: fixed !important;
+  position: fixed;
+  overflow: hidden;
 }
 
 @media (min-width: 64em) {
   .splash__container {
     height: 94vh;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-device-height: 800px) {
+  .splash__container {
+    position: absolute;
+    height: 100%;
+    z-index: 2;
   }
 }
 
@@ -5062,6 +5071,12 @@ code {
 @media (min-width: 64em) {
   .splash__container--content {
     top: 94vh;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-device-height: 800px) {
+  .splash__container--content {
+    top: 100%;
   }
 }
 
@@ -5085,7 +5100,7 @@ code {
 
 .splash {
   width: 80%;
-  height: 85vh;
+  height: 95%;
   margin: auto;
   position: absolute;
   left: 0;
@@ -5098,6 +5113,12 @@ code {
   .splash {
     height: 50%;
     top: 100px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-device-height: 800px) {
+  .splash {
+    height: 100%;
   }
 }
 
