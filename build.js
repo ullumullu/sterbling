@@ -13,6 +13,7 @@ const metalsmith = require('metalsmith'),
   dateFilter = require('nunjucks-date-filter'),
   nunjucks = require('nunjucks'),
   sitemap = require('metalsmith-mapsite'),
+  rollup = require('metalsmith-rollup'),
   devBuild = ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production'),
   htmlmin = devBuild ? null : require('metalsmith-html-minifier'),
   watch = devBuild ? require('metalsmith-watch') : null,
@@ -92,7 +93,19 @@ let siteBuild = metalsmith(__dirname)
       pattern: 'posts/:title',
       relative: false
     }))
-  );
+  )
+  .use(rollup({
+      input: 'src/js/main.js', // Entry point
+      output: {
+        format: 'iife',
+        file: 'js/bundle.js',
+        sourcemap: devBuild // This will be placed under "build/"
+      }
+    },
+    {
+      ignoreSources: devBuild
+    }
+  ));
 
 if (htmlmin) siteBuild.use(htmlmin())
 
@@ -106,7 +119,8 @@ if (watch) {
       paths: {
         "${source}/**/*": true, // every changed files will trigger a rebuild of themselves
         "${source}/layouts/**/*": "**/*.njk", // every templates changed will trigger a rebuild of all files,
-        "${source}/styles/**/*": "**/*.scss", // every templates changed will trigger a rebuild of all files
+        "${source}/styles/**/*": "**/*.scss", // every templates changed will trigger a rebuild of all files,
+        "${source}/js/**/*": "**/main.js" // every js changed will trigger a rebuild of main.js
       },
       livereload: true
     }));

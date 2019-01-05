@@ -5,16 +5,19 @@ $color-splash-container: #eff2f5;
   z-index: 1;
   overflow: hidden;
   width: 100%;
-  height: 90%;
+  height: 90vh;
   top: 0;
   left: 0;
   position: fixed !important;
 
+  @include screen("md") {
+    height: 94vh;
+  }
 
   &--content {
     position: absolute;
-    top: 90%;
-    width: 100%;
+    top: 90vh;
+    width:100%;
     min-height: 12%;
     z-index: 2;
     border-top: 1rem $border-red solid;
@@ -22,6 +25,10 @@ $color-splash-container: #eff2f5;
     // margin-bottom: 60px;
     background-clip: padding-box;
     border-bottom: 60px solid transparent;
+
+    @include screen("md") {
+      top: 94vh;
+    }
   }
 
   &--arrow-down::after {
