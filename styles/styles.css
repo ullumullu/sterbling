@@ -5044,7 +5044,7 @@ code {
 
 @media (min-width: 46em) {
   .splash__container {
-    height: 94vh;
+    height: 94%;
   }
 }
 
@@ -5062,7 +5062,7 @@ code {
 
 @media (min-width: 46em) {
   .splash__container--content {
-    top: 94vh;
+    top: 94%;
   }
 }
 
