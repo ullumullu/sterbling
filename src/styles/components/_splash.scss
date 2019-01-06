@@ -76,6 +76,7 @@ $color-splash-container: #eff2f5;
     line-height: 1em;
     @include screen("md") {
       font-size: 4rem;
+      margin-bottom: 1.5rem;
     }
   }
 
