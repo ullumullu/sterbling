@@ -1,3 +1,5 @@
-import "./intersection";
+import {arrowAnimation} from "./animation";
+import {ready} from "./utils";
 
-console.log("Hello World")
+ready()
+  .then(() => arrowAnimation());
