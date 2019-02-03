@@ -5,13 +5,43 @@
     background: $fill-white;
     max-width: 1300px;
     margin: auto;
-    padding: 3rem 0.5rem;
+    padding: 3rem 2.5rem;
     border-bottom: 60px solid transparent;
+
+    @include screen("lg") {
+      width: 70%;
+    }
+
   }
 
 }
 
 @mixin blocks {
+
+  .separator {
+
+    &__title {
+      margin: 0px;
+    }
+
+    &__line {
+      border-bottom: 0.5em solid $border-red;
+      width: 15%;
+
+      @include screen("lg") {
+        width: 10%;
+      }
+    }
+
+    &__sub-title {
+      color: #000;
+      margin-bottom: 2.5rem;
+      margin: 5px 0 2.5rem 0;
+      font-style: italic;
+    }
+
+  }
+
   .title {
     display: block;
     font-size: 1.3rem;
@@ -26,24 +56,51 @@
     display: block;
   }
 
+  .summary {
+    background-color: $text-gray;
+    overflow: visible;
+    width: calc(100% + 10rem);
+    position: relative;
+    padding: 1rem 5rem;
+    left: -5rem;
+    margin-bottom: 1rem;
+  }
+
   .career {
     line-height: 1.5;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    @include screen("lg") {
+      margin-left: 1.5rem;
+    }
+
   }
 
   .internship {
     line-height: 1.5;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    @include screen("lg") {
+      margin-left: 1.5rem;
+    }
   }
 
   .education {
     line-height: 1.5;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    @include screen("lg") {
+      margin-left: 1.5rem;
+    }
   }
 
   .patent {
     line-height: 1.5;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    @include screen("lg") {
+      margin-left: 1.5rem;
+    }
   }
 
 }
@@ -51,7 +108,7 @@
 @mixin sterbling-resume {
 
   .resume {
-    background: $fill-primary;
+    background: #fbfdff;
     @include container();
 
     @include blocks();

@@ -84,7 +84,7 @@ let siteBuild = metalsmith(__dirname)
   .use(layouts(templateConfig))
   .use(branch(['pages/**.html'])
     .use(permalinks({
-      pattern: 'pages/:title',
+      pattern: ':title',
       relative: false
     }))
   )

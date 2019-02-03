@@ -118,13 +118,13 @@ $color-splash-container: #eff2f5;
   position: absolute;
   height: 40vh;
   right: 3vw;
-  bottom: 0;
+  bottom: -10px;
   z-index: -1;
   overflow: visible;
   line-height: 0;
 
   @include screen("md") {
-    bottom: 0;
+    bottom: -10px;
     top: unset;
     left: unset;
     right: 7vw;
@@ -132,7 +132,7 @@ $color-splash-container: #eff2f5;
   }
 
   @include screen("lg") {
-    bottom: 0;
+    bottom: -20px;
     top: unset;
     left: unset;
     right: 15vw;

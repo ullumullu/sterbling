@@ -1,10 +1,11 @@
 @import "splash";
 @import "navigation";
 @import "grid";
-
+@import "resume";
 
 @mixin sterbling-components {
   @include sterbling-grid();
   @include sterbling-splash();
   @include sterbling-navigation();
+  @include sterbling-resume();
 }
