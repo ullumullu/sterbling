@@ -1,5 +1,13 @@
-import {arrowAnimation} from "./animation";
-import {ready} from "./utils";
+import {
+  arrowAnimation
+} from "./animation";
+import {
+  ready
+} from "./utils";
+import {
+  deferiframes
+} from "./defer_load";
 
 ready()
-  .then(() => arrowAnimation());
+  .then(() => arrowAnimation())
+  .then(() => deferiframes());
