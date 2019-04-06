@@ -1,8 +1,10 @@
 @import "splash";
 @import "navigation";
+@import "grid";
 
 
-@mixin blogbout-components {
-  @include blogbout-splash;
-  @include blogbout-navigation();
+@mixin sterbling-components {
+  @include sterbling-grid();
+  @include sterbling-splash();
+  @include sterbling-navigation();
 }

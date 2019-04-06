@@ -83,7 +83,7 @@ $text-colors: (meta: $text-gray) !default;
     }
 }
 
-@mixin blogbout-text {
+@mixin sterbling-text {
     .text {
         @include text-space;
         @include text-align;

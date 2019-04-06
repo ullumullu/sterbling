@@ -2,7 +2,7 @@
 @import "spacing";
 @import "text";
 
-@mixin blogbout-utilities {
-    @include blogbout-spacing;
-    @include blogbout-text;
+@mixin sterbling-utilities {
+    @include sterbling-spacing;
+    @include sterbling-text;
 }

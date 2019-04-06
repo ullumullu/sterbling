@@ -26,9 +26,9 @@ const siteMeta = {
   site: {
     devBuild: devBuild,
     version: pkg.version,
-    title: 'blogbout.com',
-    url: 'https://blogbout.com',
-    domain: devBuild ? 'http://127.0.0.1' : 'https://blogbout.com'
+    title: 'sterbling.com',
+    url: 'https://sterbling.com',
+    domain: devBuild ? 'http://127.0.0.1' : 'https://sterbling.com'
   }
 }
 
@@ -95,17 +95,15 @@ let siteBuild = metalsmith(__dirname)
     }))
   )
   .use(rollup({
-      input: 'src/js/main.js', // Entry point
-      output: {
-        format: 'iife',
-        file: 'js/bundle.js',
-        sourcemap: devBuild // This will be placed under "build/"
-      }
-    },
-    {
-      ignoreSources: devBuild
+    input: 'src/js/main.js', // Entry point
+    output: {
+      format: 'iife',
+      file: 'js/bundle.js',
+      sourcemap: devBuild // This will be placed under "build/"
     }
-  ));
+  }, {
+    ignoreSources: devBuild
+  }));
 
 if (htmlmin) siteBuild.use(htmlmin())
 

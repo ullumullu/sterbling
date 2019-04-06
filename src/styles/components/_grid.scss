@@ -1,0 +1,24 @@
+@mixin grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &--half {
+    flex: 0 0 100%;
+
+
+    @include screen("lg") {
+      flex: 0 0 50%;
+    }
+
+  }
+
+}
+
+@mixin sterbling-grid {
+
+  .grid {
+    @include grid();
+  }
+
+}

@@ -10,23 +10,12 @@
 // @import "layouts/layouts";
 @import "components/components";
 
-@include blogbout-base;
-@include blogbout-utilities;
-// @include blogbout-objects;
-// @include blogbout-layouts;
-@include blogbout-components;
+@include sterbling-base;
+@include sterbling-utilities;
+// @include sterbling-objects;
+// @include sterbling-layouts;
+@include sterbling-components;
 
 body {
   background-color: #fff;
-}
-
-.bg__pattern {
-  background: url('../images/Pattern.svg') 300% repeat fixed;
-  background-size: 80%;
-  opacity: 0.35;
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: -1;
 }
