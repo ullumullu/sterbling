@@ -13,7 +13,8 @@ const metalsmith = require('metalsmith'),
   dateFilter = require('nunjucks-date-filter'),
   nunjucks = require('nunjucks'),
   sitemap = require('metalsmith-mapsite'),
-  rollup = require('metalsmith-rollup'),
+  rollup = require('./metalsmith-rollup'),
+  uglify = require('metalsmith-uglify'),
   devBuild = ((process.env.NODE_ENV || '').trim().toLowerCase() !== 'production'),
   htmlmin = devBuild ? null : require('metalsmith-html-minifier'),
   watch = devBuild ? require('metalsmith-watch') : null,
@@ -99,11 +100,21 @@ let siteBuild = metalsmith(__dirname)
     output: {
       format: 'iife',
       file: 'js/bundle.js',
-      sourcemap: devBuild // This will be placed under "build/"
-    }
-  }, {
-    ignoreSources: devBuild
+      sourcemap: devBuild, // This will be placed under "build/"
+    },
+  },
+  {
+    ignoreSources: true
+  }))
+  
+if (!devBuild) {
+  siteBuild.use(uglify({
+    concat:{file:"js/bundle.js"},
+    es: 6,
+    uglify: { sourceMap: devBuild ? { includeSources: true } : false },
+    removeOriginal: false,
   }));
+}
 
 if (htmlmin) siteBuild.use(htmlmin())
 
