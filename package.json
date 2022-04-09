@@ -33,7 +33,7 @@
     "metalsmith-uglify": "^2.4.0",
     "metalsmith-watch": "^1.0.3",
     "modularscale-sass": "^3.0.10",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "nunjucks": "^3.2.1",
     "nunjucks-date-filter": "^0.1.1",
     "rollup-plugin-terser": "^7.0.2"
