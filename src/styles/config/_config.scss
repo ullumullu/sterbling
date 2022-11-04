@@ -53,6 +53,7 @@ Arial,
 sans-serif;
 $font-family-light: 'IBM Plex Sans',
 $font-family;
+$font-family-medium: 'IBM Plex Sans';
 $font-family-bold: 'IBM Plex Sans',
 $font-family;
 $font-family-mono: 'IBM Plex Mono',
@@ -63,6 +64,7 @@ Courier,
 monospace;
 $font-weight-light: 100;
 $font-weight: 400;
+$font-weight-medium: 600;
 $font-weight-bold: 700;
 
 $font-size-root: (xs: 15px,
