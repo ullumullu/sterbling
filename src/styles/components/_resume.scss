@@ -6,7 +6,6 @@
     max-width: 1300px;
     margin: auto;
     padding: 3rem 2.5rem;
-    border-bottom: 60px solid transparent;
 
     @include screen("lg") {
       width: 70%;
@@ -45,6 +44,11 @@
   .title {
     display: block;
     font-size: 1.3rem;
+    @include type-medium;
+
+    &__small {
+      font-size: 1.2rem;
+    }
   }
 
   .addition {
@@ -56,38 +60,32 @@
     display: block;
   }
 
+  .key-achievements {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    margin: 0.4rem 0;
+  }
+
+  .tech-stack {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+  }
+
   .summary {
     background-color: $text-gray;
     overflow: visible;
     width: calc(100% + 10rem);
     position: relative;
-    padding: 1rem 5rem;
+    padding: 3rem 5rem;
     left: -5rem;
     margin-bottom: rem(35px);
   }
 
-  .career {
+  .career-step {
     line-height: 1.5;
-    margin-bottom: 1rem;
-
-    @include screen("lg") {
-      margin-left: 1.5rem;
-    }
-
-  }
-
-  .internship {
-    line-height: 1.5;
-    margin-bottom: 1rem;
-
-    @include screen("lg") {
-      margin-left: 1.5rem;
-    }
-  }
-
-  .education {
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
 
     @include screen("lg") {
       margin-left: 1.5rem;
@@ -96,7 +94,7 @@
 
   .patent {
     line-height: 1.5;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     @include screen("lg") {
       margin-left: 1.5rem;
@@ -109,6 +107,11 @@
 
   .resume {
     background: #fbfdff;
+    position: relative;
+    z-index: 2;
+    background-clip: padding-box;
+    border-bottom: 60px solid transparent;
+    
     @include container();
 
     @include blocks();
