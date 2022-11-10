@@ -10,7 +10,7 @@
     "metalsmith-mapsite": "^1.0.6",
     "metalsmith-publish": "^0.1.5",
     "purecss": "^1.0.1",
-    "trianglify": "^1.3.0"
+    "trianglify": "^4.1.1"
   },
   "devDependencies": {
     "chokidar": "^3.4.0",
